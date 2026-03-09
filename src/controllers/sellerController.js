@@ -1,5 +1,6 @@
 const supabase = require('../config/database');
 const { successResponse, errorResponse } = require('../utils/response');
+<<<<<<< HEAD
 const registerSeller = async (req, res) => {
   try {
     const { name, phone, id_proof_type, id_proof_url } = req.body;
@@ -10,6 +11,15 @@ const registerSeller = async (req, res) => {
       ? id_proof_url.replace('/safeplots/', '/')
       : null;
 
+=======
+
+const registerSeller = async (req, res) => {
+  try {
+    // 1. Extract the new fields from req.body
+    const { name, phone, id_proof_type, id_proof_url } = req.body;
+    const userId = req.user.id;
+
+>>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     // Check if seller already exists
     const { data: existingSeller } = await supabase
       .from('sellers')
@@ -26,14 +36,22 @@ const registerSeller = async (req, res) => {
       );
     }
 
+<<<<<<< HEAD
     // Get user email
+=======
+    // Get user details (email)
+>>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     const { data: user } = await supabase
       .from('users')
       .select('email')
       .eq('id', userId)
       .single();
 
+<<<<<<< HEAD
     // Insert seller
+=======
+    // 2. Create new seller using the dynamic data from frontend
+>>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     const { data: seller, error } = await supabase
       .from('sellers')
       .insert({
@@ -41,8 +59,13 @@ const registerSeller = async (req, res) => {
         name,
         email: user.email,
         phone,
+<<<<<<< HEAD
         id_proof_type,
         id_proof_url: cleanIdProofUrl, // cleaned URL
+=======
+        id_proof_type, // Now dynamic
+        id_proof_url,  // Now dynamic
+>>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
         status: 'pending',
         is_verified: false
       })
@@ -59,7 +82,11 @@ const registerSeller = async (req, res) => {
       );
     }
 
+<<<<<<< HEAD
     // Update role
+=======
+    // Check if user already has a role
+>>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     const { data: existingRole } = await supabase
       .from('user_roles')
       .select('id, role')
