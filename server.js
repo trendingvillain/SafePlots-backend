@@ -46,7 +46,8 @@ app.get('/', (req, res) => {
       sellers: '/v1/sellers',
       inquiries: '/v1/inquiries',
       reports: '/v1/reports',
-      admin: '/v1/admin'
+      admin: '/v1/admin',
+      Mari : '/v1/uploads'
     }
   });
 });
