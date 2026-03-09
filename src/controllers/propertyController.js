@@ -2,7 +2,6 @@ const supabase = require('../config/database');
 const { successResponse, errorResponse } = require('../utils/response');
 
 
-<<<<<<< HEAD
 const cleanR2Url = (url) => {
   if (!url) return url;
   return url.replace('/safeplots/', '/');
@@ -13,8 +12,6 @@ const cleanImageArray = (images = []) => {
   return images.map(img => cleanR2Url(img));
 };
 
-=======
->>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
 const getProperties = async (req, res) => {
   try {
     const {
@@ -379,11 +376,7 @@ const createProperty = async (req, res) => {
 
     // If frontend sends empty images array, use the default for that type
     const finalImages = images && images.length > 0 
-<<<<<<< HEAD
       ? cleanImageArray(images)
-=======
-      ? images 
->>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
       : [DEFAULT_PROPERTY_IMAGES[type] || DEFAULT_PROPERTY_IMAGES.default];
 
     // 3. Insert into Supabase
