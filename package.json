@@ -19,10 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "@aws-sdk/client-s3": "^3.1004.0",
-=======
->>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     "@supabase/supabase-js": "^2.39.3",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.6",
@@ -31,10 +28,7 @@
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-<<<<<<< HEAD
     "multer": "^2.1.1",
-=======
->>>>>>> 4658c8c4a2d3a6e9d069d926a575ca6284e0e25b
     "nodemailer": "^6.9.7",
     "uuid": "^9.0.1"
   },
