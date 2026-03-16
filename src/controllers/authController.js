@@ -272,12 +272,9 @@ const login = async (req, res) => {
       phone: user.phone,
       avatar: user.avatar_url,
       role: primaryRole,
-      status: user.status
+      status: user.status,
+      isVerified: user.email_verified
     };
-
-    if (primaryRole === 'seller') {
-      userPayload.isVerified = sellerVerified;
-    }
 
     return successResponse(
       res,
